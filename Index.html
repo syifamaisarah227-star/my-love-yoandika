@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hallo, Yoandika Bagus Pangestu 💖</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Georgia',serif;
+    background:black;
+    color:white;
+    overflow:hidden;
+}
+
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url('background.jpg') center/cover no-repeat;
+    filter:blur(8px) brightness(40%);
+    z-index:-2;
+}
+
+#login, #opening{
+    position:fixed;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:black;
+}
+
+#login{ z-index:10; }
+#opening{ display:none; z-index:8; }
+
+input{
+    padding:12px 20px;
+    border-radius:25px;
+    border:none;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+button{
+    padding:10px 25px;
+    border:none;
+    border-radius:25px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+}
+
+#content{
+    display:none;
+    padding:60px 20px;
+    text-align:center;
+    overflow-y:auto;
+    height:100vh;
+}
+
+#typed{
+    max-width:850px;
+    margin:auto;
+    line-height:2;
+    white-space:pre-line;
+    font-size:19px;
+}
+
+.gallery{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+}
+
+@keyframes fadeZoom{
+    from{opacity:0; transform:scale(0.8);}
+    to{opacity:1; transform:scale(1.1);}
+}
+
+#opening h1{
+    font-size:48px;
+    animation:fadeZoom 4s forwards;
+}
+
+.snow{
+    position:fixed;
+    top:-20px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{transform:translateY(110vh);}
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div id="login">
+    <h2>Masukkan Kata Sandi 💌</h2>
+    <input type="password" id="password" placeholder="Kata sandi...">
+    <button onclick="checkPassword()">Masuk</button>
+    <p id="error" style="color:pink;margin-top:10px;"></p>
+</div>
+
+<div id="opening">
+    <h1>Yoan ❤️ Maica</h1>
+</div>
+
+<div id="content">
+    <h2>Untuk kamu, sayangku 💖</h2>
+    <p id="typed"></p>
+
+    <div class="gallery">
+        <img src="foto1.jpg">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+        <img src="foto4.jpg">
+    		<img src="foto5.jpg">
+    		<img src="foto6.jpg">
+    		<img src="foto7.jpg">
+    </div>
+</div>
+
+<audio id="heartbeat">
+    <source src="heartbeat.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="music" loop>
+    <source src="sekarang-hingga-nanti-kita-tua.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const correctPassword = "ILoveMaica";
+
+function checkPassword(){
+    const input = document.getElementById("password").value;
+    if(input === correctPassword){
+
+        document.getElementById("login").style.display="none";
+
+        const heartbeat = document.getElementById("heartbeat");
+        heartbeat.play();
+
+        setTimeout(()=>{
+            document.getElementById("opening").style.display="flex";
+        },4000);
+
+        setTimeout(()=>{
+            document.getElementById("opening").style.display="none";
+            document.getElementById("content").style.display="block";
+            document.getElementById("music").play();
+            typeEffect();
+        },8000);
+
+    } else {
+        document.getElementById("error").innerText="Kata sandi salah, coba lagi sayang 💔";
+    }
+}
+
+const text = `Sayangku Yoandika...
+
+Terima kasih sudah hadir di hidupku, sayang.
+Terima kasih sudah memilih untuk tetap tinggal,
+bahkan ketika keadaan tidak selalu mudah.
+
+Kamu tahu, sayang?
+Kamu adalah alasan kenapa aku percaya
+bahwa cinta itu benar-benar ada.
+
+Sejak kamu datang ke hidupku,
+semuanya terasa berbeda, sayang.
+Hari-hariku punya tujuan.
+Senyumku punya alasan.
+Dan hatiku punya tempat untuk pulang.
+
+Aku mungkin belum sempurna, sayang.
+Aku masih belajar.
+Aku masih berproses.
+Tapi satu hal yang tidak pernah berubah —
+perasaanku ke kamu.
+
+Setiap hari aku berusaha,
+supaya kamu merasa dicintai, sayang.
+Supaya kamu merasa dihargai.
+Supaya kamu tahu,
+ada seseorang di sini yang selalu memilih kamu.
+
+Kalau suatu hari dunia terasa berat,
+kalau suatu hari kamu lelah,
+ingat ya, sayang...
+
+Aku tetap di sini.
+Aku tetap memilih kamu.
+Lagi.
+Dan lagi.
+Dan lagi.
+
+Karena buat aku, sayang...
+kamu bukan cuma seseorang yang aku cintai.
+
+Kamu adalah rumah yang selalu ingin aku jaga.
+Dan nama yang selalu ingin aku perjuangkan.
+
+Aku tidak pernah setengah hati mencintaimu.
+Aku sayang kamu.
+Di hari baik.
+Di hari buruk.
+Di saat kita tertawa.
+Di saat kita diam.
+
+Kalau suatu hari dunia terasa berat,
+ingat ya sayang…
+ada aku yang tetap memilih kamu.
+
+Kalau aku harus memilih lagi,
+di hidup berbeda,
+di waktu berbeda,
+di semesta berbeda…
+
+aku tetap ingin menemukanmu.
+Dan tetap ingin jatuh cinta padamu.
+Lagi.
+
+Aku sayang kamu, sayangku.
+Lebih dalam dari yang bisa aku jelaskan.
+Lebih lama dari yang bisa waktu pisahkan.
+
+Dan kalau suatu hari kamu bertanya
+seberapa besar aku mencintaimu…
+
+sebesar takutku kehilanganmu,
+dan sebesar harapku memilikimu selamanya. 💖`;
+
+let i=0;
+function typeEffect(){
+    if(i<text.length){
+        document.getElementById("typed").innerHTML+=text.charAt(i);
+        i++;
+        setTimeout(typeEffect,45);
+    } else {
+        setTimeout(startEnding,5000);
+    }
+}
+
+/* Ending Cinematic */
+function startEnding(){
+    fadeMusic();
+    showFinalMessage();
+}
+
+function fadeMusic(){
+    const music = document.getElementById("music");
+    let fade = setInterval(()=>{
+        if(music.volume > 0.05){
+            music.volume -= 0.05;
+        } else {
+            music.volume = 0;
+            clearInterval(fade);
+        }
+    },300);
+}
+
+function showFinalMessage(){
+    const finalDiv = document.createElement("div");
+    finalDiv.style.position="fixed";
+    finalDiv.style.top="0";
+    finalDiv.style.left="0";
+    finalDiv.style.width="100%";
+    finalDiv.style.height="100%";
+    finalDiv.style.background="black";
+    finalDiv.style.display="flex";
+    finalDiv.style.justifyContent="center";
+    finalDiv.style.alignItems="center";
+    finalDiv.style.textAlign="center";
+    finalDiv.style.padding="30px";
+    finalDiv.style.fontSize="26px";
+    finalDiv.style.opacity="0";
+    finalDiv.style.transition="opacity 4s ease";
+
+    finalDiv.innerHTML="Kalau suatu hari aku tidak pandai berkata-kata lagi...<br><br>ingat saja satu hal, sayang —<br><br><b>Aku selalu memilih kamu.</b> 💖";
+
+    document.body.appendChild(finalDiv);
+
+    setTimeout(()=>{ finalDiv.style.opacity="1"; },100);
+
+    setTimeout(()=>{
+        finalDiv.style.opacity="0";
+        document.getElementById("heartbeat").play();
+    },10000);
+}
+
+/* Snow */
+function createSnow(){
+    let snow=document.createElement("div");
+    snow.classList.add("snow");
+    snow.innerHTML="💗";
+    snow.style.left=Math.random()*100+"vw";
+    snow.style.fontSize=(Math.random()*20+15)+"px";
+    snow.style.animationDuration=(Math.random()*10+10)+"s";
+    document.body.appendChild(snow);
+    setTimeout(()=>snow.remove(),20000);
+}
+setInterval(createSnow,700);
+</script>
+
+</body>
+</html>
