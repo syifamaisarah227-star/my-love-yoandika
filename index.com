@@ -171,7 +171,7 @@ button{
 </audio>
 
 <audio id="music" loop>
-    <source src="lagu-romantis.mp3" type="audio/mpeg">
+    <source src="sekarang-hingga-nanti-kita-tua.mp3" type="audio/mpeg">
 </audio>
 
 <script>
